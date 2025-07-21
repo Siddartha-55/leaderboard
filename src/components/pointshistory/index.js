@@ -9,7 +9,7 @@ const Pointshistory = () => {
     const [history , setHistory] = useState([])
     useEffect(() => {
         const fetchHistory = async () => {
-            const response = await fetch('http://localhost:5000/history')
+            const response = await fetch('https://leaderboard-backend-vbaw.onrender.com/history')
             const data = await response.json()
             setHistory(data)
         }

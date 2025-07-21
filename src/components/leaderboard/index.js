@@ -7,7 +7,7 @@ const Leaderboard = () => {
   const [allUsers, setAllUsers] = useState([]);
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await fetch('http://localhost:5000/')
+      const response = await fetch('https://leaderboard-backend-vbaw.onrender.com/')
       const data = await response.json()
       setAllUsers(data)
     }
@@ -37,7 +37,7 @@ const Leaderboard = () => {
       },
       body: JSON.stringify(pointhistory)
     }
-    await fetch('http://localhost:5000/addhistory', historyoptions)
+    await fetch('https://leaderboard-backend-vbaw.onrender.com/addhistory', historyoptions)
     const options = {
       method: 'POST',
       headers: {
@@ -45,7 +45,7 @@ const Leaderboard = () => {
       },
       body: JSON.stringify(rankedUsers)
     }
-    const response = await fetch('http://localhost:5000/updatepoints', options)
+    const response = await fetch('https://leaderboard-backend-vbaw.onrender.com/updatepoints', options)
     const data = await response.json()
     console.log(data)
   };
